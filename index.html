@@ -496,9 +496,24 @@ section{
 <input type="email" class="form-control mb-3" placeholder="Email" required>
 <input type="date" class="form-control mb-3" required>
 <input type="number" class="form-control mb-3" placeholder="Number of Guests" required>
-<button class="btn btn-gold w-100">Reserve Table</button>
-</form>
+<button type="button" class="btn btn-gold w-100" onclick="bookViaWhatsApp()">Reserve via
+                    WhatsApp</button>
 
+                <script>
+                    function bookViaWhatsApp() {
+                        const name = document.querySelector('input[placeholder="Your Name"]').value;
+                        const email = document.querySelector('input[type="email"]').value;
+                        const date = document.querySelector('input[type="date"]').value;
+                        const guests = document.querySelector('input[placeholder="Number of Guests"]').value;
+
+                        const message = `Hi! I'd like to book a table:%0AName: ${name}%0AEmail: ${email}%0ADate: ${date}%0AGuests: ${guests}`;
+                        const phone = '919049509145'; // Replace with your restaurant's WhatsApp number
+
+                        window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+                    }
+                </script>
+</form>
+    
 </div>
 </section>
 
