@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Pure Veg Restaurant</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.navbar{
+    background:#f8f8f8;
+}
+
+.navbar-brand span{
+    color:#d4a017;
+    font-weight:700;
+}
+
+.hero{
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1543352634-99a5d50ae78e');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    display:flex;
+    align-items:center;
+    text-align:center;
+}
+
+.hero h1{
+    font-family: 'Playfair Display', serif;
+    font-size:70px;
+}
+
+.btn-gold{
+    background:#d4a017;
+    color:white;
+    padding:12px 30px;
+    border-radius:8px;
+}
+
+.section-title{
+    font-family: 'Playfair Display', serif;
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.menu-card{
+    border:none;
+    transition:0.3s;
+}
+
+.menu-card:hover{
+    transform:translateY(-10px);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.badge-veg{
+    background:green;
+}
+
+
+/*Team*/
+
+.team{
+    width: 100%;
+    height: 90vh;
+    background-image: url(image/bg1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.team h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+    margin-bottom: 30px;
+}
+
+.team h1 span{
+    color: #fac031;
+    margin-left: 15px;
+    font-family: mv boli;
+}
+
+.team h1 span::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #fac031;
+    display: block;
+    position: relative;
+    bottom: 15px;
+}
+
+.team .team_box{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 13%;
+}
+
+.team .team_box .profile{
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    transition: 0.4s;
+}
+
+.team .team_box .profile:hover{
+    border-radius: 20px;
+    height: 320px;
+}
+
+.team .team_box .profile img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    z-index: 2;
+    transition: 0.4s;
+}
+
+.team .team_box .profile:hover img{
+    border-radius: 20px;
+    margin-top: -230px;
+}
+
+.team .team_box .profile .info{
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    transition: 0.4s;
+}
+
+.team .team_box .profile:hover .info{
+    top: 60%;
+}
+
+.team .team_box .profile .info .name{
+    color: #fac031;
+    margin-bottom: 15px;
+}
+
+.team .team_box .profile .info .bio{
+    width: 70%;
+    text-align: center;
+    margin: 0 auto 10px auto;
+}
+
+.team .team_box .profile .info .team_icon i{
+    margin: 10px 5px 5px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.team .team_box .profile .info .team_icon i:hover{
+    color: #fac031;
+}
+
+
+
+
+.cta{
+    background:linear-gradient(to right,#3e1f0d,#000);
+    color:white;
+    padding:80px 0;
+    text-align:center;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+<div class="container">
+<a class="navbar-brand fw-bold" href="#"><span>Royal</span> Restaurant</a>
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#menu-section">Menu</a></li>
+<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+</ul>
+<a href="#contact" class="btn btn-gold ms-3">Book Table</a>
+</div>
+</div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+<div class="container">
+<h1>Royal Pure Veg</h1>
+<p class="lead mt-3">Where vegetarian excellence meets refined elegance</p>
+<p class="mt-3">Experience premium vegetarian cuisine crafted with passion and perfection.</p>
+<a href="#menu-section" class="btn btn-gold mt-4">View Menu</a>
+</div>
+</section>
+
+<!-- Menu Section -->
+<section class="py-5" id="menu-section">
+<div class="container text-center">
+<h2 class="section-title">Signature Veg Dishes</h2>
+<p class="text-muted mb-5">Delight in our premium vegetarian creations</p>
+
+
+<div class="row g-4">
+<div class="col-md-3">
+<div class="card menu-card shadow">
+<img src="images/Paneer_Tikka.png" class="card-img-top" alt="Paneer Tikka">
+<div class="card-body">
+<h5>Paneer Tikka <span class="badge badge-veg">Pure Veg</span></h5>
+<p>Grilled cottage cheese with aromatic spices</p>
+<h6 class="text-warning">₹280</h6>
+</div>
+
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card menu-card shadow">
+<img src="images/Veg_Biryani.png" class="card-img-top" alt="Paneer Tikka">
+<div class="card-body">
+<h5>Veg Biryani <span class="badge badge-veg">Pure Veg</span></h5>
+<p>Fragrant basmati rice with fresh vegetables</p>
+<h6 class="text-warning">₹240</h6>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card menu-card shadow">
+<img src="images/Malai_Kofta.png" class="card-img-top" alt="Paneer Tikka">
+<div class="card-body">
+<h5>Malai Kofta <span class="badge badge-veg">Pure Veg</span></h5>
+<p>Creamy gravy with soft vegetable dumplings</p>
+<h6 class="text-warning">₹260</h6>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card menu-card shadow">
+<img src="images/Margherita_Pizza.png" class="card-img-top" alt="Paneer Tikka">
+<div class="card-body">
+<h5>Margherita Pizza <span class="badge badge-veg">Pure Veg</span></h5>
+<p>Classic cheese pizza with fresh basil</p>
+<h6 class="text-warning">₹320</h6>
+</div>
+</div>
+</div>
+
+
+<div class="col-md-3">
+  <div class="card menu-card shadow">
+    <img src="images/Paneer_Butter_Masala.png" class="card-img-top" alt="Paneer Butter Masala">
+    <div class="card-body">
+      <h5>Paneer Butter Masala <span class="badge badge-veg">Pure Veg</span></h5>
+      <p>Soft cottage cheese cubes in a rich, creamy tomato gravy.</p>
+      <h6 class="text-warning">₹380</h6>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-md-3">
+  <div class="card menu-card shadow">
+    <img src="images/Hyderabadi.png" class="card-img-top" alt="Hyderabadi Veg Biryani">
+    <div class="card-body">
+      <h5>Hyderabadi Biryani <span class="badge badge-veg">Pure Veg</span></h5>
+      <p>Aromatic basmati rice cooked with garden veggies and saffron.</p>
+      <h6 class="text-warning">₹420</h6>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="card menu-card shadow">
+    <img src="images/Dal_Makhani.png" class="card-img-top" alt="Dal Makhani">
+    <div class="card-body">
+      <h5>Dal Makhani <span class="badge badge-veg">Pure Veg</span></h5>
+      <p>Black lentils slow-cooked overnight with butter and cream.</p>
+      <h6 class="text-warning">₹290</h6>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-md-3">
+  <div class="card menu-card shadow">
+    <img src="images/naan.png" class="card-img-top" alt="Butter Garlic Naan">
+    <div class="card-body">
+      <h5>Butter Garlic Naan <span class="badge badge-veg">Pure Veg</span></h5>
+      <p>Soft tandoor-baked bread topped with garlic and fresh butter.</p>
+      <h6 class="text-warning">₹90</h6>
+    </div>
+  </div>
+</div>
+
+
+</div>
+</div>
+</section>
+
+
+
+<!-- About Section -->
+<section class="py-5 bg-light" id="about">
+<div class="container text-center">
+<h2 class="section-title">Why Choose Royal</h2>
+<p class="text-muted mb-5">Excellence in every vegetarian dish</p>
+
+<div class="row">
+<div class="col-md-4">
+<h5>🌿 Fresh Ingredients</h5>
+<p>Farm-fresh vegetables sourced locally</p>
+</div>
+<div class="col-md-4">
+<h5>👨‍🍳 Expert Chefs</h5>
+<p>Experienced chefs specializing in veg cuisine</p>
+</div>
+<div class="col-md-4">
+<h5>⭐ Premium Quality</h5>
+<p>Authentic taste with elegant presentation</p>
+</div>
+</div>
+</div>
+</section>
+
+
+    <!--Team-->
+
+    <div class="team">
+        <h1>Our Team </h1>
+
+        <div class="team_box">
+            <div class="profile">
+                <img src="images/chef1.png">
+
+                <div class="info">
+                    <h2 class="name">Arjun Mehra</h2>
+                    <p class="bio">Executive Chef</p>
+
+                    <div class="team_icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="profile">
+                <img src="images/chef2.png">
+
+                <div class="info">
+                    <h2 class="name">A. Sharma</h2>
+                    <p class="bio">Pastry Chef</p>
+                     
+                    <div class="team_icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="profile">
+                <img src="images/chef3.jpg">
+
+                <div class="info">
+                    <h2 class="name">V. Malhotra</h2>
+                    <p class="bio">Sous Chef</p>
+
+                    <div class="team_icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="profile">
+                <img src="images/chef4.jpg">
+
+                <div class="info">
+                    <h2 class="name">Kabir Khan</h2>
+                    <p class="bio">Head of Cuisine</p>
+
+                    <div class="team_icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+<!-- CTA -->
+<section class="cta">
+<div class="container">
+<h2 class="section-title text-white">Ready for a Delicious Veg Experience?</h2>
+<p class="mt-3">Reserve your table and enjoy pure vegetarian luxury</p>
+<a href="#contact" class="btn btn-gold mt-3">Reserve Now</a>
+</div>
+</section>
+
+<!-- Contact -->
+<section class="py-5" id="contact">
+<div class="container text-center">
+<h2 class="section-title">Book a Table</h2>
+
+<form class="col-md-6 mx-auto mt-4">
+<input type="text" class="form-control mb-3" placeholder="Your Name" required>
+<input type="email" class="form-control mb-3" placeholder="Email" required>
+<input type="date" class="form-control mb-3" required>
+<input type="number" class="form-control mb-3" placeholder="Number of Guests" required>
+<button class="btn btn-gold w-100">Reserve Table</button>
+</form>
+
+</div>
+</section>
+
+<footer class="bg-dark text-white text-center p-3">
+© 2026 Royal Pure Veg Restaurant | All Rights Reserved
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
