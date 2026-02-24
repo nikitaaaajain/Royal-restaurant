@@ -11,6 +11,8 @@
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
     body{
     font-family: 'Poppins', sans-serif;
@@ -86,7 +88,9 @@
 .badge-veg{
     background:green;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 /* ================= TEAM SECTION ================= */
 
 .team{
@@ -157,16 +161,45 @@
 
 /* Hover effect only on desktop */
 @media (hover:hover){
+
+    .profile{
+        transition:0.4s;
+    }
+
+    .profile img{
+        transition:0.4s;
+    }
+
+    .profile .info{
+        transition:0.4s;
+    }
+
     .profile:hover{
         border-radius:20px;
     }
 
+    /* Image moves DOWN instead of UP */
     .profile:hover img{
         border-radius:20px;
-        transform:translateY(-60px);
+        transform:translateY(60px);
+    }
+
+    /* Info moves UP instead of staying fixed */
+    .profile:hover .info{
+        transform:translateY(-40px);
     }
 }
+/* Feedback Stars */
+.star-rating i {
+    font-size: 25px;
+    cursor: pointer;
+    color: #ccc;
+    transition: 0.3s;
+}
 
+.star-rating i.active {
+    color: #d4a017;
+}
 /* ================= CTA ================= */
 
 .cta{
@@ -230,7 +263,78 @@ section{
     height:200px;
 }
 
+.btn-outline-dark{
+    border-radius:8px;
+    transition:0.3s;
 }
+
+.btn-outline-dark:hover{
+    background:#d4a017;
+    color:white;
+    border-color:#d4a017;
+}
+
+}
+
+.map-wrapper {
+    max-width: 900px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+.nav-link.active,
+.nav-link:hover {
+    color: #d4a017 !important;
+}
+/* Footer */
+.custom-footer{
+    background:#eaeaea;
+    padding:60px 0 20px;
+}
+
+.footer-title{
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.footer-list{
+    list-style:none;
+    padding:0;
+}
+
+.footer-list li{
+    margin-bottom:10px;
+    font-size:15px;
+}
+
+.footer-list li a{
+    text-decoration:none;
+    color:black;
+    transition:0.3s;
+}
+
+.footer-list li a:hover{
+    color:#d4a017;
+}
+
+.footer-social i{
+    font-size:18px;
+    margin-right:15px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.footer-social i:hover{
+    color:#d4a017;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .footer-title{
+        margin-top:20px;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -251,6 +355,7 @@ section{
 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 </ul>
 <a href="#contact" class="btn btn-gold ms-3">Book Table</a>
+<a href="#order" class="btn btn-gold ms-3">Order Food</a>
 </div>
 </div>
 </nav>
@@ -369,6 +474,39 @@ section{
 
 </div>
 </div>
+</section>
+
+<!-- Food Category Section -->
+<section class="py-5 bg-light text-center" id="order">
+  <div class="container">
+    <h2 class="section-title">What Would You Like to Explore?</h2>
+    <p class="text-muted mb-4">Choose your favorite category</p>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+
+      <a href="south-indian.html" class="btn btn-gold px-4 py-2">
+        🍛 South Indian
+      </a>
+
+      <a href="snacks.html" class="btn btn-outline-dark px-4 py-2">
+        🍟 Snacks
+      </a>
+
+      <a href="desserts.html" class="btn btn-outline-dark px-4 py-2">
+        🍰 Desserts
+      </a>
+
+      <a href="chinese.html" class="btn btn-outline-dark px-4 py-2">
+    🥢 Chinese
+</a>
+
+ <a href="maharastrian.html" class="btn btn-outline-dark px-4 py-2">
+        🚩 Maharashtrian
+      </a>
+
+
+    </div>
+  </div>
 </section>
 
 
@@ -496,29 +634,121 @@ section{
 <input type="email" class="form-control mb-3" placeholder="Email" required>
 <input type="date" class="form-control mb-3" required>
 <input type="number" class="form-control mb-3" placeholder="Number of Guests" required>
-<button type="button" class="btn btn-gold w-100" onclick="bookViaWhatsApp()">Reserve via
-                    WhatsApp</button>
-
-                <script>
-                    function bookViaWhatsApp() {
-                        const name = document.querySelector('input[placeholder="Your Name"]').value;
-                        const email = document.querySelector('input[type="email"]').value;
-                        const date = document.querySelector('input[type="date"]').value;
-                        const guests = document.querySelector('input[placeholder="Number of Guests"]').value;
-
-                        const message = `Hi! I'd like to book a table:%0AName: ${name}%0AEmail: ${email}%0ADate: ${date}%0AGuests: ${guests}`;
-                        const phone = '919049509145'; // Replace with your restaurant's WhatsApp number
-
-                        window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
-                    }
-                </script>
+<button class="btn btn-gold w-100">Reserve Table</button>
 </form>
-    
 </div>
 </section>
+<!-- Feedback Section -->
+<section class="py-5 bg-light" id="feedback">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-title">Customer Feedback</h2>
+      <p class="text-muted mb-4">We value your experience at Royal Pure Veg</p>
+    </div>
 
-<footer class="bg-dark text-white text-center p-3">
-© 2026 Royal Pure Veg Restaurant | All Rights Reserved
+    <form class="col-md-8 mx-auto mt-4" id="feedbackForm">
+      
+      <input type="text" class="form-control mb-3" placeholder="Your Name" required>
+
+      <input type="email" class="form-control mb-3" placeholder="Your Email" required>
+
+      <!-- Star Rating -->
+      <div class="mb-3 text-center">
+        <label class="mb-2">Rate Us</label>
+        <div class="star-rating">
+          <i class="fa-solid fa-star" data-value="1"></i>
+          <i class="fa-solid fa-star" data-value="2"></i>
+          <i class="fa-solid fa-star" data-value="3"></i>
+          <i class="fa-solid fa-star" data-value="4"></i>
+          <i class="fa-solid fa-star" data-value="5"></i>
+        </div>
+      </div>
+
+      <textarea class="form-control mb-3" rows="4" placeholder="Write your feedback..." required></textarea>
+
+      <button type="submit" class="btn btn-gold w-100">Submit Feedback</button>
+
+      <p class="text-success text-center mt-3 d-none" id="successMsg">
+        Thank you for your valuable feedback ❤️
+      </p>
+
+    </form>
+  </div>
+</section>
+<!-- Map Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="map-wrapper mx-auto">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3735.898618732492!2d75.70436067501774!3d20.55132858098121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd97f7014a75e43%3A0x7ca8d7c57639691f!2sAjanta%20Caves!5e0!3m2!1sen!2sin!4v1771952755600!5m2!1sen!2sin"
+        width="100%" 
+        height="400" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+<!-- Footer -->
+<footer class="custom-footer">
+  <div class="container">
+    <div class="row text-center text-md-start">
+
+     
+      <!-- Quick Link -->
+      <div class="col-12 col-md-6 col-lg-2 mb-4">
+        <h4 class="footer-title">Quick Link</h4>
+        <ul class="footer-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu-section">Menu</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Order</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <h4 class="footer-title">Contact</h4>
+        <ul class="footer-list">
+          <li>+94 789769654</li>
+          <li>+94 255568456</li>
+          <li>nikitagisavi@gmail.com</li>
+          <li>poojagosavi@gmail.com</li>
+        </ul>
+      </div>
+
+      <!-- Our Service -->
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <h4 class="footer-title">Our Service</h4>
+        <ul class="footer-list">
+          <li>Fast Delivery</li>
+          <li>Easy Payments</li>
+          <li>24 x 7 Service</li>
+        </ul>
+      </div>
+
+      <!-- Follows -->
+      <div class="col-12 col-lg-2 mb-4 text-center text-lg-start">
+        <h4 class="footer-title">Follows</h4>
+        <div class="footer-social">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-linkedin-in"></i>
+        </div>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <div class="text-center pb-2">
+      © 2026 Royal Pure Veg Restaurant | All Rights Reserved
+    </div>
+
+  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
